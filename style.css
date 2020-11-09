@@ -1,0 +1,609 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.a{
+  position: relative;
+}
+
+body, html {
+  width: 100%;
+  height: fit-content;
+  font-family: 'Cormorant Garamond', serif;
+  background-image: linear-gradient(to right, #1b4c14, #3a4804, #4f4201, #603b0d, #6c341e, #6c341e, #6c341e, #6c341e, #603b0d, #4f4201, #3a4804, #1b4c14);
+}
+
+.loading {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: 4;
+  background-color: #fffaf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading2 {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  z-index: 5;
+  background-color: #3d2018;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadlogo {
+  width: 30%;
+  opacity: 0;
+}
+
+.loading3 {
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  transform-origin: bottom;
+  z-index: 5;
+  background-color: #3d2018;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loadlogo2{
+  width: 30%;
+}
+
+.grapes {
+  width: 30%;
+  height: 30%;
+  fill: #3d2018;
+}
+
+.grapes ellipse, path {
+  opacity: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 10vh;
+  background-color: #fffaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  height: 6vh;
+  margin-left: 10%;
+}
+
+.hamburger {
+  height: 100%;
+  width: 70px;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hamburger .top {
+  width: 60%;
+  height: 1%;
+  margin: 5%;
+  background-color: #3d2018;
+  transition: 0.5s ease-out;
+  transform-origin: top left;
+}
+.hamburger .mid {
+  width: 60%;
+  height: 1%;
+  margin: 5%;
+  background-color: #3d2018;
+  transition: 0.1s ease-out;
+
+}
+.hamburger .bot {
+  width: 60%;
+  height: 1%;
+  margin: 5%;
+  background-color: #3d2018;
+  transition: 0.5s ease-out;
+  transform-origin: bottom left;
+}
+
+.hamburger-open .top {
+  transform: rotate(45deg) translateY(-10px);
+  background-color: #1b4c14;
+}
+.hamburger-open .mid {
+  background-color: transparent;
+}
+.hamburger-open .bot {
+  transform: rotate(-45deg) translateY(10px);
+  background-color: #1b4c14;
+}
+
+.nav-closed {
+  position: absolute;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  background-color: #3d2018;
+  transition: all 0.5s ease-out;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  opacity: 0;
+  z-index: 2;
+}
+
+.nav-open {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  top: 10%;
+  left: 0;
+  width: 100%;
+  height: 80vh;
+  background-color: #3d2018;
+  opacity: 1;
+  transform: scaleY(1);
+  transition: all 0.5s ease-out;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.contact {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  color: #fffaf0;
+}
+
+.content ul {
+  margin-top: 5%;
+  border-bottom: solid 1px #fffaf0;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.content ul li a{
+  text-decoration: none;
+  color: #fffaf0;
+  font-size: 3rem;
+}
+
+.center {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background-color: #FFE4E1;
+}
+
+.swiper-container {
+  width: 100vw;
+  height: 100%;
+  cursor: grab;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #FFE4E1;
+  height: 100%;
+  width: 100vw;
+}
+
+.parax {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.parax img {
+  position: absolute;
+  object-fit: cover;
+}
+
+.parax a {
+  display: block;
+  text-decoration: none;
+  font-size: 3.5rem;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  color: #fffaf0;
+  border-bottom: solid 1px #fffaf0;
+}
+
+#bg {
+  width: 120%;
+  height: 120%;
+  filter: blur(8px);
+  -webkit-filter: blur(3px)
+}
+
+#logo {
+  width: 30%;
+}
+
+footer {
+  width: 100%;
+  height: 10vh;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  background-color: #fffaf0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer .scroll {
+  height: 90%;
+}
+footer .scroll-open {
+  height: 90%;
+  display: none;
+}
+footer .scroll .arr1{
+  fill: #3d2018;
+  stroke-width: 1;
+  stroke: #3d2018;
+  opacity: 0;
+}
+footer .scroll .arr2{
+  fill: #3d2018;
+  stroke-width: 1;
+  stroke: #3d2018;
+  opacity: 1;
+}
+footer .scroll .bod{
+  stroke-width: 1;
+  stroke: #3d2018;
+  fill: none;
+}
+footer .scroll .wheel{
+  position: relative;
+  fill: #3d2018;
+  animation: myscroll 2s infinite;
+}
+@keyframes myscroll{
+  from {y: 7.5;}
+  to {y: 10;}
+}
+
+footer #scroll-move {
+  position: relative;
+  animation: mymove 3s infinite;
+}
+@keyframes mymove {
+ 0% {
+  transform: translateX(0px);
+} 25% {
+  transform: translateX(4.5px);
+} 50% {
+  transform: translateX(0px);
+} 75% {
+  transform: translateX(-4.5px);
+} 100% {
+  transform: translateX(0px);
+ }
+}
+
+/*Wines html css for scroll ------------------------------------------------------------------------------------*/
+.basket {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.5s ease;
+}
+
+.center .wines {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  background-color: #FFE4E1;
+}
+
+.wine {
+  position: relative;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wine img {
+  z-index: 2;
+  height: 80%;
+  filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.5));
+}
+
+.cage {
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  position: absolute;
+  z-index: 1;
+  border-radius: 50%;
+  width: 20rem;
+  height: 20rem;
+  background-image: linear-gradient(to top, rgba(161, 140, 209, 0.75) 0%, rgba(251, 193, 234, 0.75) 100%);
+}
+
+.info {
+  height: 100%;
+  width: 50%;
+  color: #3d2018;
+  padding-right: 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.info h1 {
+  position: relative;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 5%;
+  font-size: 50px;
+  display: block;
+  width: 150%;
+  background-color: rgba(161, 140, 209, 0.75);
+  color: #fffaf0;
+}
+
+.info h2 {
+  font-weight: bold;
+  margin-bottom: 5%;
+  font-size: 20px;
+  font-family: 'Poppins', serif;
+}
+
+.info h3 {
+  font-weight: 400;
+  margin-bottom: 20%;
+  font-size: 22px;
+}
+
+.info p {
+  position: relative;
+  padding: 5px;
+  width: 100%;
+  font-size: 16px;
+  font-family: 'Poppins', serif;
+  display: block;
+  background-color: rgba(161, 140, 209, 0.75);
+  color: #fffaf0;
+  z-index: 1;
+  right: -65%;
+  bottom: 5%;
+  display: flex;
+}
+
+.wine-outline {
+  padding: 5px;
+  display: block;
+}
+
+/*Family css scroll */
+.family-bg {
+  position: fixed;
+  background-color: #FFE4E1;
+  width: 100%;
+  height: 120%;
+  z-index: 0;
+}
+.family-bg .circle {
+  height: 800px;
+  width: 800px;
+  position: absolute;
+  right: 10%;
+  bottom: 30%;
+}
+.family-center {
+  z-index: 1;
+  width: 100%;
+  height: 80vh;
+}
+.family {
+  margin: 0 auto;
+  height: 100%;
+  width: 90vw;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.family section {
+  position: relative;
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  margin-bottom: 10vh;
+}
+.family .third {
+  flex-direction: column;
+  margin-bottom: 7%;
+} 
+.family section .img{
+  flex: 1;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: 2s;
+  opacity: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.family .second .img {
+  transform-origin: left;
+}
+.family .third .img {
+  transform-origin: bottom;
+  transform: scaleY(0);
+}
+.family section .img img{
+  position: relative;
+  width: 80%;
+}
+.family .third .img img {
+  width: 30%;
+}
+.family section .introduction{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 2s;
+}
+.family .third .introduction{
+  transform-origin: top;
+  transform: scaleY(0);
+}
+.family .second .introduction{
+  transform-origin: right;
+}
+.family section .introduction h3{
+  font-weight: bold;
+  margin-bottom: 3%;
+  font-size: 20px;
+  opacity: 0.5;
+}
+.family section .introduction h1 {
+  font-weight: bold;
+  margin-bottom: 3%;
+  font-size: 20px;
+}
+.family section .introduction h2 {
+  position: relative;
+  font-weight: bold;
+  padding: 5px;
+  margin-bottom: 3%;
+  font-size: 25px;
+  display: block;
+  background-color: rgba(161, 140, 209, 0.75);
+  color: #fffaf0;
+}
+.family section .introduction div {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.family section[data-scroll="in"] .img{
+  opacity: 1;
+  transform: scaleX(1);
+}
+.family .third[data-scroll="in"] .img{
+  opacity: 1;
+  transform: scaleY(1);
+}
+.family section[data-scroll="in"] .introduction{
+  opacity: 1;
+  transform: scaleX(1);
+}
+.family .third[data-scroll="in"] .introduction{
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+@media only screen and (max-width: 1030px) {
+  .content ul li a{
+    font-size: 1.5rem;
+  }
+  .contact {
+    flex-direction: row;
+  }
+  .family section {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .content ul{
+    flex-direction: column;
+  }
+  .content ul li{
+    margin: 10px;
+  }
+
+  .contact {
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  .contact h1 {
+    font-size: 1.5rem;
+  }
+
+  .family section {
+    flex-direction: column;
+    height: fit-content;
+    margin-bottom: 5%;
+  }
+  .family section img{
+    margin: 15px auto;
+  }
+  .family {
+    margin-bottom: 20%;
+  }
+
+  .logo {
+    height: 4vh;
+  }
+
+  .info h3 {
+    font-size: 1rem;
+  }
+  .info h1 {
+    font-size: 1.5rem;
+  }
+  .info h3,h2,h1,p {
+    position: relative;
+    z-index: 2;
+  }
+}
