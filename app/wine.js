@@ -68,6 +68,59 @@ function _load () {
       .to(".loadlogo2", {duration: 2, opacity: 0}, "load")
       .to(".loading3", {display: "none"}, "load")
       .to(".loadlogo2", {display: "none"}, "load")
+
+// Detect mobile swipe
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+function handleTouchStart(evt) {
+  const firstTouch = getTouches(evt)[0];                                      
+  yDown = firstTouch.clientY;                                      
+};
+
+function handleTouchMove (evt) {
+  if(timer) {
+    window.clearTimeout(timer);
+  }
+
+  timer = window.setTimeout(
+function () {
+  if ( !yDown ) {
+      return;
+  }
+
+  var yUp = evt.touches[0].clientY;
+
+  var yDiff = yDown - yUp;
+
+      if ( yDiff > 0 ) {
+        /* up swipe */ 
+        console.log("fel");
+        if (place != 4) {
+          place += 1;
+          wineSwipe();
+        };
+      } else { 
+        /* down swipe */
+        console.log("le");
+        if(place != 0) {
+          place -= 1;
+          wineSwipe();
+          //basket.style.top = `-${place*100}%`;
+        };
+      }                                                                 
+  /* reset values */
+  xDown = null;
+  yDown = null;                                             
+},300);
+};
+
 }
 
 //-----------------------------------

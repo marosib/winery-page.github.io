@@ -137,7 +137,7 @@ header {
 }
 
 .nav-closed {
-  position: absolute;
+  position: fixed;
   transform-origin: bottom;
   transform: scaleY(0);
   background-color: #3d2018;
@@ -151,7 +151,7 @@ header {
 }
 
 .nav-open {
-  position: absolute;
+  position: fixed;
   display: flex;
   flex-direction: column;
   z-index: 2;
@@ -575,9 +575,13 @@ footer #scroll-move {
   .contact {
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
   }
   .contact h1 {
     font-size: 1.5rem;
+  }
+  .contact .room,.restaurant {
+    text-align: center;
   }
 
   .family section {
@@ -601,6 +605,107 @@ footer #scroll-move {
   }
   .info h1 {
     font-size: 1.5rem;
+  }
+  .info h3,h2,h1,p {
+    position: relative;
+    z-index: 2;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .content ul{
+    flex-direction: column;
+  }
+  .content ul li{
+    margin: 10px;
+  }
+
+  .contact {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .contact h1 {
+    font-size: 1.5rem;
+  }
+  .contact .room,.restaurant {
+    text-align: center;
+  }
+
+  .family section {
+    flex-direction: column;
+    height: fit-content;
+    margin-bottom: 5%;
+  }
+  .family section img{
+    margin: 15px auto;
+  }
+  .family {
+    margin-bottom: 20%;
+  }
+
+  .logo {
+    height: 4vh;
+  }
+
+  .info h3 {
+    font-size: 1rem;
+  }
+  .info h1 {
+    font-size: 1.5rem;
+  }
+  .info h3,h2,h1,p {
+    position: relative;
+    z-index: 2;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .content ul{
+    flex-direction: column;
+  }
+  .content ul li{
+    margin: 10px;
+  }
+
+  .contact {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .contact h1 {
+    font-size: 1.5rem;
+  }
+  .contact .room,.restaurant {
+    text-align: center;
+  }
+
+  .family section {
+    flex-direction: column;
+    height: fit-content;
+    margin-bottom: 5%;
+  }
+  .family section img{
+    margin: 15px auto;
+  }
+  .family {
+    margin-bottom: 20%;
+  }
+
+  .logo {
+    height: 4vh;
+  }
+
+  .info h3 {
+    font-size: 0.85rem;
+  }
+  .info h1 {
+    font-size: 1.25rem;
+  }
+  .info h2 {
+    font-size: 0.75rem;
+  }
+  .info p {
+    font-size: 0.75rem;
+    align-items: center;
   }
   .info h3,h2,h1,p {
     position: relative;
