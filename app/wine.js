@@ -70,8 +70,8 @@ function _load () {
       .to(".loadlogo2", {display: "none"}, "load")
 
 // Detect mobile swipe
-document.addEventListener('touchstart', handleTouchStart, false);        
-document.addEventListener('touchmove', handleTouchMove, false);
+document.addEventListener('touchstart', handleTouchStart, {passive: false});        
+document.addEventListener('touchmove', handleTouchMove, {passive: false});
 
 var yDown = null;
 

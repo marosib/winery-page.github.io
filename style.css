@@ -8,6 +8,7 @@
 }
 
 body, html {
+  overscroll-behavior-y: contain;
   width: 100%;
   height: fit-content;
   font-family: 'Cormorant Garamond', serif;
